@@ -1,0 +1,6 @@
+framework module Pods_XNUtils_Tests {
+  umbrella header "Pods-XNUtils_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

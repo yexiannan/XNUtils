@@ -1,0 +1,16 @@
+PODS:
+  - XNUtils (0.1.0)
+
+DEPENDENCIES:
+  - XNUtils (from `../`)
+
+EXTERNAL SOURCES:
+  XNUtils:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  XNUtils: 8616bcd130cc9918157c16fed2bc4a144e722d80
+
+PODFILE CHECKSUM: aa21728ca30dd71493c2e3d4751997b0ac62e10b
+
+COCOAPODS: 1.7.1
