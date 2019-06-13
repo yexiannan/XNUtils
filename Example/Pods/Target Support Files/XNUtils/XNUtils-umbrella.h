@@ -18,6 +18,7 @@
 #import "UIColor+XNColor.h"
 #import "UIFont+XNFont.h"
 #import "UIImage+XNImage.h"
+#import "UILabel+XNLabel.h"
 #import "UIView+XNView.h"
 #import "UIView+YYAdd.h"
 #import "XNMacro.h"
