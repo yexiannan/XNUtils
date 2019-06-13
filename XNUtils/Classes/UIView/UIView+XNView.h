@@ -30,6 +30,8 @@ typedef NS_ENUM(NSUInteger ,BadgePosition) {
 +(void)changeLabelStyle:(UIView *)view WithRadii:(CGSize)size WithCorner:(UIRectCorner)corners;
 #pragma mark - Badge
 #warning Adding a badge using this category will create a tag of 15726
+
+
 //notificationPath   通知路径数组 格式：@[@"aVC/bVC/cVC",@"mVC/nVC/cVC"]，当移除红点或count减少时，会遍历notificationPath中的路径并发送通知，如cVC红点移除时会发送key为@“aVC/bVC”和@"mVC/nVC“两条通知
 @property (nonatomic, copy) NSArray <NSString *> *notificationPathArray;
 
