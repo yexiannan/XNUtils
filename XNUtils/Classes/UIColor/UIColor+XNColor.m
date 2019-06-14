@@ -17,6 +17,8 @@ static BOOL hexStrToRGBA(NSString *str,
         str = [str substringFromIndex:1];
     } else if ([str hasPrefix:@"0X"]) {
         str = [str substringFromIndex:2];
+    } else if ([str hasPrefix:@"0x"]) {
+        str = [str substringFromIndex:2];
     }
     
     NSUInteger length = [str length];
