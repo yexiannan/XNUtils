@@ -83,5 +83,7 @@ _Pragma("clang diagnostic pop")
 #define Ratio_WIDTH_375     (SCREEN_WIDTH/375.f)
 //比例高度
 #define Ratio_HEIGHT_667    (SCREEN_HEIGHT/667.f)
+//屏幕宽度适配 小于375则按比例缩小否则不变
+#define Ratio_WIDTH_375_Scale(width)     (SCREEN_WIDTH<375?width*Ratio_WIDTH_375:width)
 
 #endif /* XNMacro_h */
