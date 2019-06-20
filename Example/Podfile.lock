@@ -1,5 +1,5 @@
 PODS:
-  - XNUtils (0.1.7)
+  - XNUtils (0.1.8)
 
 DEPENDENCIES:
   - XNUtils (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  XNUtils: ce60b15e2c048a8db31bb48ec6f108df9317f0f9
+  XNUtils: 429d2f3ec3776edf8504cd688e1642b13f878b6e
 
 PODFILE CHECKSUM: aa21728ca30dd71493c2e3d4751997b0ac62e10b
 
