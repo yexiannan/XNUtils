@@ -86,4 +86,6 @@ _Pragma("clang diagnostic pop")
 //屏幕宽度适配 小于375则按比例缩小否则不变
 #define Ratio_WIDTH_375_Scale(width)     (SCREEN_WIDTH<375?width*Ratio_WIDTH_375:width)
 
+#define AdjustsScrollViewInsetNever(controller,view) if(@available(iOS 11.0, *)) {view.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;} else if([controller isKindOfClass:[UIViewController class]]) {controller.automaticallyAdjustsScrollViewInsets = false;}
+
 #endif /* XNMacro_h */
