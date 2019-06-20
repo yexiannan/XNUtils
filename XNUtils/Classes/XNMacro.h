@@ -18,7 +18,7 @@
 #import "UIImage+XNImage.h"
 #import "CALayer+XNLayer.h"
 #import "UILabel+XNLabel.h"
-
+#import "NSString+XNString.h"
 
 //---------------------------Log打印时间戳与日志所在文件位置---------------------------
 #ifdef DEBUG
