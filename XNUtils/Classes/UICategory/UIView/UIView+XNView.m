@@ -43,12 +43,8 @@ static char badgeImageKey;
 #pragma mark - Set Badge
 
 - (void)clearBadgeAndSendNotificationWithCount:(NSNumber *)count{
-    [self.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if (obj.tag == 15726) {
-            [obj removeFromSuperview];
-            *stop = YES;
-        }
-    }];
+    [self.badgeLabel removeFromSuperview];
+    [self.badgeImage removeFromSuperview];
     
     if (![NSArray arrayIsNull:self.notificationPathArray]) {
         [self.notificationPathArray enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -64,12 +60,8 @@ static char badgeImageKey;
 
 
 - (void)clearBadge{
-    [self.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if (obj.tag == 15726) {
-            [obj removeFromSuperview];
-            *stop = YES;
-        }
-    }];
+    [self.badgeLabel removeFromSuperview];
+    [self.badgeImage removeFromSuperview];
 }
 
 - (void)setBadgeWithCount:(NSInteger)count MaxCount:(NSInteger)maxCount Font:(UIFont *)font TextColor:(UIColor *)textColor BadgeColor:(UIColor *)badgeColor BadgePosition:(BadgePosition)badgePosition BadgeOffset:(UIEdgeInsets)badgeOffset{
@@ -89,7 +81,6 @@ static char badgeImageKey;
 
     self.badgeCount = [NSNumber numberWithInteger:count];
     self.badgeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
-    self.badgeLabel.tag = 15726;
     self.badgeLabel.backgroundColor = [UIColor redColor];
     self.badgeLabel.textColor = textColor?textColor:[UIColor whiteColor];
     self.badgeLabel.font = font?font:MFont(10);
@@ -123,15 +114,10 @@ static char badgeImageKey;
     //图片非空判断
     if (![icon isKindOfClass:[UIImage class]]) return;
     //先移除之前的badge
-    [self.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if (obj.tag == 15726) {
-            [obj removeFromSuperview];
-            *stop = YES;
-        }
-    }];
+    [self.badgeImage removeFromSuperview];
+    self.badgeImage = nil;
     
     self.badgeImage = [[UIImageView alloc] initWithImage:icon];
-    self.badgeImage.tag = 15726;
     [self addSubview:self.badgeImage];
     self.badgeImage.frame = [self getBageRectWithBadgePosition:badgePosition BadgeSize:iconSize BadgeOffset:badgeOffset];
 }

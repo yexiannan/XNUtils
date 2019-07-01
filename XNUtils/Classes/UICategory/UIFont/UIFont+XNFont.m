@@ -43,9 +43,9 @@
     CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
     CGFloat scaleSize = size * floorf(screenWidth/375.0);
     
-    if (maxSize > 0) {
+    if (maxSize > 0) { //是否有设置最大值
         
-        if (minSize < maxSize) {
+        if (minSize < maxSize) { //最大值和最小值区间的有效性判断
             
             if (size <= minSize) {
                 scaleSize = minSize;
@@ -60,7 +60,7 @@
         
     } else {
         
-        if (minSize > 0) {
+        if (minSize > 0) { //是否有设置最小值
             
             if (size < minSize) {
                 scaleSize = minSize;

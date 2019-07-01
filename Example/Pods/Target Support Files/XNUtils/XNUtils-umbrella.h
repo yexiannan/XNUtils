@@ -14,6 +14,7 @@
 #import "NSArray+XNArray.h"
 #import "BTNSDateFormatterFactory.h"
 #import "NSDate+XNDate.h"
+#import "NSDictionary+XNDictionary.h"
 #import "NSString+XNString.h"
 #import "UIButton+XNButton.h"
 #import "UIColor+XNColor.h"

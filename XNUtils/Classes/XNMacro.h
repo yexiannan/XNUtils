@@ -11,14 +11,17 @@
 
 #import "NSArray+XNArray.h"
 #import "NSDate+XNDate.h"
+#import "NSString+XNString.h"
+#import "NSDictionary+XNDictionary.h"
+
+#import "CALayer+XNLayer.h"
+
 #import "UIColor+XNColor.h"
 #import "UIFont+XNFont.h"
 #import "UIView+YYAdd.h"
 #import "UIView+XNView.h"
 #import "UIImage+XNImage.h"
-#import "CALayer+XNLayer.h"
 #import "UILabel+XNLabel.h"
-#import "NSString+XNString.h"
 #import "UIButton+XNButton.h"
 
 //---------------------------Log打印时间戳与日志所在文件位置---------------------------
@@ -63,7 +66,7 @@ _Pragma("clang diagnostic pop")
 #endif  // end arc
 #endif  // end strongify
 
-//--------------------------添加线程锁------------------------
+//--------------------------添加信号量线程锁------------------------
 #define CLLOCK(lock) dispatch_semaphore_wait(lock, DISPATCH_TIME_FOREVER);
 #define CLUNLOCK(lock) dispatch_semaphore_signal(lock);
 
@@ -84,9 +87,9 @@ _Pragma("clang diagnostic pop")
 #define Ratio_WIDTH_375     (SCREEN_WIDTH/375.f)
 //比例高度
 #define Ratio_HEIGHT_667    (SCREEN_HEIGHT/667.f)
-//屏幕宽度适配 小于375则按比例缩小否则不变
-#define Ratio_WIDTH_375_Scale(width)     (SCREEN_WIDTH<375?width*Ratio_WIDTH_375:width)
-
+//屏幕宽度适配 小于375则按比例缩小取整否则不变
+#define Ratio_WIDTH_375_Scale(width)     (SCREEN_WIDTH<375?floor(width*Ratio_WIDTH_375):width)
+//取消ScrollView布局自动缩进
 #define AdjustsScrollViewInsetNever(controller,view) if(@available(iOS 11.0, *)) {view.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;} else if([controller isKindOfClass:[UIViewController class]]) {controller.automaticallyAdjustsScrollViewInsets = false;}
 
 #endif /* XNMacro_h */
