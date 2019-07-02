@@ -17,7 +17,7 @@
 #import "NSDictionary+XNDictionary.h"
 #import "NSString+XNString.h"
 #import "FSCommenDefine.h"
-#import "UIButton+XNButton.h"
+#import "XNButton.h"
 #import "UIColor+XNColor.h"
 #import "UIFont+XNFont.h"
 #import "UIImage+XNImage.h"
@@ -25,6 +25,8 @@
 #import "UIView+XNView.h"
 #import "UIView+YYAdd.h"
 #import "XNMacro.h"
+#import "Reachability.h"
+#import "XNSystemHelper.h"
 
 FOUNDATION_EXPORT double XNUtilsVersionNumber;
 FOUNDATION_EXPORT const unsigned char XNUtilsVersionString[];

@@ -50,7 +50,7 @@ static inline NSUInteger hexStrToInt(NSString *str) {
     return result;
 }
 
-+ (instancetype)colorWithHexString:(NSString *)hexStr {
++ (instancetype)xnColorWithHexString:(NSString *)hexStr{
     CGFloat r, g, b, a;
     if (hexStrToRGBA(hexStr, &r, &g, &b, &a)) {
         return [UIColor colorWithRed:r green:g blue:b alpha:a];
@@ -58,11 +58,12 @@ static inline NSUInteger hexStrToInt(NSString *str) {
     return nil;
 }
 
-+ (instancetype)colorWithHexString:(NSString *)hexStr Alpha:(CGFloat)alpha{
++ (instancetype)xnColorWithHexString:(NSString *)hexStr Alpha:(CGFloat)alpha{
     CGFloat r, g, b, a;
     if (hexStrToRGBA(hexStr, &r, &g, &b, &a)) {
         return [UIColor colorWithRed:r green:g blue:b alpha:alpha];
     }
     return nil;
 }
+
 @end

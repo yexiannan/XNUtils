@@ -18,12 +18,12 @@ NS_ASSUME_NONNULL_BEGIN
 #define COLOR_GARY_E1 cHEXCOLOR(#e1e1e1)
 #define COLOR_PLACEHOLDER cHEXCOLOR(#C7C7CD)
 
-#define cHEXCOLOR(_hex_) [UIColor colorWithHexString:((__bridge NSString *)CFSTR(#_hex_))]
-#define cHEXACOLOR(_hex_,alpha) [UIColor colorWithHexString:((__bridge NSString *)CFSTR(#_hex_)) Alpha:alpha]
+#define cHEXCOLOR(_hex_) [UIColor xnColorWithHexString:((__bridge NSString *)CFSTR(#_hex_))]
+#define cHEXACOLOR(_hex_,alpha) [UIColor xnColorWithHexString:((__bridge NSString *)CFSTR(#_hex_)) Alpha:alpha]
 
 @interface UIColor (XNColor)
-+ (instancetype)colorWithHexString:(NSString *)hexStr;
-+ (instancetype)colorWithHexString:(NSString *)hexStr Alpha:(CGFloat)alpha;
++ (instancetype)xnColorWithHexString:(NSString *)hexStr;
++ (instancetype)xnColorWithHexString:(NSString *)hexStr Alpha:(CGFloat)alpha;
 @end
 
 NS_ASSUME_NONNULL_END

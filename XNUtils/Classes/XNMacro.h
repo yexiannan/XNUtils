@@ -22,7 +22,7 @@
 #import "UIView+XNView.h"
 #import "UIImage+XNImage.h"
 #import "UILabel+XNLabel.h"
-#import "UIButton+XNButton.h"
+#import "XNButton.h"
 
 //---------------------------Log打印时间戳与日志所在文件位置---------------------------
 #ifdef DEBUG

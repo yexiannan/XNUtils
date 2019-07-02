@@ -1,20 +1,37 @@
 //
-//  UIButton+XNButton.m
-//  Car-league_Finacing
+//  XNButton.m
+//  XNUtils
 //
-//  Created by apple on 2019/3/28.
-//  Copyright © 2019 lxy. All rights reserved.
+//  Created by Luigi on 2019/7/2.
 //
+//此类的图片位置布局方法引用https://github.com/shunFSKi/FSCustomButtonDemo
 
-#import "UIButton+XNButton.h"
+#import "XNButton.h"
 #import "FSCommenDefine.h"
 
-//key for associative methods during runtime
-static char buttonImagePositionKey;
+@implementation XNButton
 
-@implementation UIButton (XNButton)
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [self initialization];
+    }
+    return self;
+}
 
-- (void)layoutSubviews{
+- (void)initialization
+{
+    // iOS7以后的button，sizeToFit后默认会自带一个上下的contentInsets，为了保证按钮大小即为内容大小，这里直接去掉，改为一个最小的值。
+    // 不能设为0，否则无效；也不能设置为小数点，否则无法像素对齐
+    self.contentEdgeInsets = UIEdgeInsetsMake(1, 0, 1, 0);
+    
+    self.buttonImagePosition = XNButtonImagePosition_Left;//默认布局
+}
+
+
+- (void)layoutSubviews
+{
     [super layoutSubviews];
     //size存在空的情况
     if (CGRectIsEmpty(self.bounds)) {
@@ -176,7 +193,6 @@ static char buttonImagePositionKey;
     }
 }
 
-
 - (CGSize)sizeThatFits:(CGSize)size {
     // 如果调用 sizeToFit，那么传进来的 size 就是当前按钮的 size，此时的计算不要去限制宽高
     if (CGSizeEqualToSize(self.bounds.size, size)) {
@@ -228,23 +244,33 @@ static char buttonImagePositionKey;
     return resultSize;
 }
 
-
-- (instancetype)init{
-    if (self = [super init]) {
-//        self.buttonImagePosition = XNButtonImagePosition_Left;//默认布局
-    }
-    return self;
-}
-
-#pragma mark -- setter/getter
-- (XNButtonImagePosition)buttonImagePosition{
-    return [objc_getAssociatedObject(self, &buttonImagePositionKey) integerValue];
-}
-
-- (void)setButtonImagePosition:(XNButtonImagePosition)buttonImagePosition{
-    objc_setAssociatedObject(self, &buttonImagePositionKey, @(buttonImagePosition), OBJC_ASSOCIATION_COPY);
+- (void)setButtonImagePosition:(XNButtonImagePosition)buttonImagePosition
+{
+    _buttonImagePosition = buttonImagePosition;
     [self setNeedsLayout];
 }
+
+//快速创建按钮
++ (UIButton *)newButtonWithBackgroundImage:(nullable UIImage *)image TitleNormalColor:(UIColor *)titleNormalColor Font:(UIFont *)font TitleNormal:(NSString *)titleNormal Taget:(nullable id)taget Action:(nullable SEL)action{
+    XNButton *button = [XNButton new];
+    [image isKindOfClass:[UIImage class]] ? [button setBackgroundImage:image forState:UIControlStateNormal] : nil;
+    [button.titleLabel setFont:font];
+    [button setTitleColor:titleNormalColor forState:UIControlStateNormal];
+    [button setTitle:titleNormal forState:UIControlStateNormal];
+    
+    if (taget) {
+        if (action) {
+            [button addTarget:taget action:action forControlEvents:UIControlEventTouchUpInside];
+        }
+    }
+    
+    return button;
+}
+
+@end
+
+
+@implementation UIButton (XNButton)
 
 //快速创建按钮
 + (UIButton *)newButtonWithBackgroundImage:(nullable UIImage *)image TitleNormalColor:(UIColor *)titleNormalColor Font:(UIFont *)font TitleNormal:(NSString *)titleNormal Taget:(nullable id)taget Action:(nullable SEL)action{
