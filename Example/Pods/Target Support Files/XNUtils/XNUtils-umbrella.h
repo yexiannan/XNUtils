@@ -16,6 +16,7 @@
 #import "NSDate+XNDate.h"
 #import "NSDictionary+XNDictionary.h"
 #import "NSString+XNString.h"
+#import "FSCommenDefine.h"
 #import "UIButton+XNButton.h"
 #import "UIColor+XNColor.h"
 #import "UIFont+XNFont.h"

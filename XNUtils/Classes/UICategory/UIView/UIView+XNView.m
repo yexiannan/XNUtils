@@ -7,6 +7,7 @@
 //
 
 #import "UIView+XNView.h"
+#import <objc/runtime.h>
 #import "XNMacro.h"
 
 //key for associative methods during runtime
