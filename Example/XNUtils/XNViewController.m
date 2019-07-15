@@ -7,7 +7,7 @@
 //
 
 #import "XNViewController.h"
-#import "XNMacro.h"
+#import "XNUtils.h"
 
 @interface XNViewController ()
 
