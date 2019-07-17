@@ -11,7 +11,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSDictionary (XNDictionary)
-
+/**
+ * 字典转json格式字符串  字典为nil时返回@""
+ */
+- (NSString *)dictionaryToJson;
 @end
 
 NS_ASSUME_NONNULL_END

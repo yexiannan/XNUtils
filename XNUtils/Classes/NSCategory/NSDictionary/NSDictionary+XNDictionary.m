@@ -103,4 +103,15 @@
 }
 
 #endif
+
+- (NSString *)dictionaryToJson{
+    if (self) {
+        NSError *parseError = nil;
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:self options:NSJSONWritingPrettyPrinted error:&parseError];
+        
+        return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    }
+    return @"";
+}
+
 @end
