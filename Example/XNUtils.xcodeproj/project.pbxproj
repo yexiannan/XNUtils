@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3294496122CB2C2B00131A74 /* my_ic_coupon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3294495F22CB2C2A00131A74 /* my_ic_coupon@2x.png */; };
 		3294496222CB2C2B00131A74 /* my_ic_coupon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3294496022CB2C2A00131A74 /* my_ic_coupon@3x.png */; };
+		329A11B422E00A190090A3F8 /* testPic.png in Resources */ = {isa = PBXBuildFile; fileRef = 329A11B322E00A190090A3F8 /* testPic.png */; };
 		4C8675C6AE89313754634D11 /* Pods_XNUtils_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 050B0BCBAF9E411D5146AD56 /* Pods_XNUtils_Example.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -43,6 +44,7 @@
 		27E7374E097D08E44F424A39 /* Pods-XNUtils_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XNUtils_Example.debug.xcconfig"; path = "Target Support Files/Pods-XNUtils_Example/Pods-XNUtils_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		3294495F22CB2C2A00131A74 /* my_ic_coupon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "my_ic_coupon@2x.png"; sourceTree = "<group>"; };
 		3294496022CB2C2A00131A74 /* my_ic_coupon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "my_ic_coupon@3x.png"; sourceTree = "<group>"; };
+		329A11B322E00A190090A3F8 /* testPic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testPic.png; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* XNUtils_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XNUtils_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -149,6 +151,7 @@
 			children = (
 				3294495F22CB2C2A00131A74 /* my_ic_coupon@2x.png */,
 				3294496022CB2C2A00131A74 /* my_ic_coupon@3x.png */,
+				329A11B322E00A190090A3F8 /* testPic.png */,
 				6003F59C195388D20070C39A /* XNAppDelegate.h */,
 				6003F59D195388D20070C39A /* XNAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -286,6 +289,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				329A11B422E00A190090A3F8 /* testPic.png in Resources */,
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,

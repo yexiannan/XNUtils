@@ -31,6 +31,10 @@
     NSDictionary *dict = @{@"key":@"阿嘎斯",@"array":@[@"阿斯顿",@{@"key":@"打撒"}]};
     NSLog(@"--dict = %@",@[dict]);
 
+    UIImage *image = [UIImage imageNamed:@"testPic"];
+    
+    [UIImage imageToDataWithImage:image MaxDataSizeKBytes:1];
+    
 }
 
 - (void)viewWillLayoutSubviews{

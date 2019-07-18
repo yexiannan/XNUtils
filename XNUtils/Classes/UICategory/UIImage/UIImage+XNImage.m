@@ -39,43 +39,35 @@
     return image;
 }
 
-+ (NSData *)imageToDataWithImage:(UIImage *)image MaxDataSizeKBytes:(float)size{
++ (NSData *)imageToDataWithImage:(UIImage *)image MaxDataSizeKBytes:(NSUInteger)size{
     NSData * data = UIImageJPEGRepresentation(image, 1.0);
     if (!size || size <= 0) {
         return data;
     }
-    CGFloat dataKBytes = data.length;
-    CGFloat maxQuality = 0.9f;
-    CGFloat lastData = dataKBytes;
-    while (dataKBytes > size && maxQuality > 0.01f) {
-        maxQuality = maxQuality - 0.01f;
-        data = UIImageJPEGRepresentation(image, maxQuality);
-        dataKBytes = data.length / 1024.0;
-        if (lastData == dataKBytes) {
-            break;
-        }else{
-            lastData = dataKBytes;
+    
+    CGFloat dataKBytes = data.length/1024.f;
+    
+    if (dataKBytes > size) {
+        CGFloat quality = size/dataKBytes;
+        data = UIImageJPEGRepresentation(image, quality);
+        UIImage *compressedImage = [UIImage imageWithData:data];
+
+        dataKBytes = data.length/1024.f;
+        quality = 0.9;
+
+        while (dataKBytes > size) {
+            data = UIImageJPEGRepresentation(compressedImage, quality);
+            dataKBytes = data.length/1024.f;
+            quality = quality - 0.01;
         }
+        
     }
+    
     return data;
 }
 
-+ (UIImage *)imageCompressWithImage:(UIImage *)image MaxDataSizeKBytes:(float)size{
-    NSData * data = UIImageJPEGRepresentation(image, 1.0);
-    CGFloat dataKBytes = data.length/1024.0;
-    CGFloat maxQuality = 0.9f;
-    CGFloat lastData = dataKBytes;
-    while (dataKBytes > size && maxQuality > 0.01f) {
-        maxQuality = maxQuality - 0.01f;
-        data = UIImageJPEGRepresentation(image, maxQuality);
-        dataKBytes = data.length / 1024.0;
-        if (lastData == dataKBytes) {
-            break;
-        }else{
-            lastData = dataKBytes;
-        }
-    }
-    return [UIImage imageWithData:data];
++ (UIImage *)imageCompressWithImage:(UIImage *)image MaxDataSizeKBytes:(NSUInteger)size{
+    return [UIImage imageWithData:[self imageToDataWithImage:image MaxDataSizeKBytes:size]];
 }
 
 + (UIImage *)createCodeImageWithUrlString:(nonnull NSString *)urlString Size:(CGFloat)size{

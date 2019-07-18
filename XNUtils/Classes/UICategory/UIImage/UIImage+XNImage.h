@@ -30,11 +30,11 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  图片转Data 原图size传nil或0
  */
-+ (NSData *)imageToDataWithImage:(UIImage *)image MaxDataSizeKBytes:(float)size;
++ (NSData *)imageToDataWithImage:(UIImage *)image MaxDataSizeKBytes:(NSUInteger)size;
 /**
  *  压缩图片
  */
-+ (UIImage *)imageCompressWithImage:(UIImage *)image MaxDataSizeKBytes:(float)size;
++ (UIImage *)imageCompressWithImage:(UIImage *)image MaxDataSizeKBytes:(NSUInteger)size;
 /**
  *  生成指定大小的二维码图片
  */
